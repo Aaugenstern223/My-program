@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aa.studentmanagement.mapper.ScoreMapper">
+    <resultMap id="scoreResultMap" type="com.aa.studentmanagement.model.Score">
+        <!-- ID字段 -->
+        <id property="id" column="id"/>
+        <!-- 学生ID -->
+        <result property="studentId" column="student_id"/>
+        <!-- 期中成绩 -->
+        <result property="midMarks" column="mid_marks"/>
+        <!-- 期末成绩 -->
+        <result property="endMarks" column="end_marks"/>
+    </resultMap>
+
+    <!-- 根据学生ID查询成绩 -->
+    <select id="getScores" resultMap="scoreResultMap">
+        SELECT * FROM scores
+    </select>
+
+    <!-- 添加成绩 -->
+    <insert id="addScore">
+        INSERT INTO scores (student_id, mid_marks, end_marks)
+        VALUES (#{score.studentId}, #{score.midMarks}, #{score.endMarks})
+    </insert>
+
+    <!-- 更新成绩 -->
+    <update id="updateScore">
+        UPDATE scores
+        SET mid_marks = #{score.midMarks},
+            end_marks = #{score.endMarks}
+        WHERE id = #{score.id}
+    </update>
+</mapper>

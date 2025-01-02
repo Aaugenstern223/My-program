@@ -1,0 +1,10 @@
+com\aa\studentmanagement\servlet\LoginServlet.class
+com\aa\studentmanagement\mapper\UserMapper.class
+com\aa\studentmanagement\model\Score.class
+com\aa\studentmanagement\mapper\ScoreMapper.class
+com\aa\studentmanagement\servlet\StudentServlet.class
+com\aa\studentmanagement\config\DatabaseConfig.class
+com\aa\studentmanagement\mapper\StudentMapper.class
+com\aa\studentmanagement\servlet\ScoreServlet.class
+com\aa\studentmanagement\model\Student.class
+com\aa\studentmanagement\model\User.class
